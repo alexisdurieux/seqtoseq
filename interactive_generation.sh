@@ -1,0 +1,1 @@
+python interactive.py data-bin/iwslt14.tokenized.de-en   --path checkpoints/fconv/checkpoint_best.pt
