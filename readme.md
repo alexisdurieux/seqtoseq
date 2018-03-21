@@ -31,3 +31,5 @@ CUDA_VISIBLE_DEVICES=0 python train.py data-bin/iwslt14.tokenized.de-en   --lr 0
 python generate.py data-bin/iwslt14.tokenized.de-en   --path checkpoints/fconv/checkpoint_best.pt   --batch-size 128 --beam 5
 
 ## Convolutional SEQ2SEQ implementation with Keras
+
+De plus j'ai essayé d'implémenter un réseau convolutionnel Seq2Seq avec Keras. Afin de faciliter l'implémentation, j'ai utilisé un jeu de données simplifié afin d'avoir moins de preprocessing à faire. Le jeu de données consiste en une liste de phrases anglaises séparées de leurs traductions françaises par un caractère `\t`. À partir de ce jeu de données, j'ai dans un premier temps créé le dictionnaire de mots source (anglais) et de mots de sortie (anglais) afin de créer l'embedding des données. De plus en raison du caractère convolutionel du réseau et donc de la modélisation hierarchique des données, il est précisé dans le papier l'importance de donner la position des mots en plus de leur présence ou non comme précisé dans le papier. 
